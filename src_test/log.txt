@@ -1,0 +1,10 @@
+# Logfile created on 2012-12-05 15:52:20 -0200 by logger.rb/31641
+I, [2012-12-05T15:52:20.717105 #16848]  INFO -- : *** parse_symbols_between_delimiters(resources processes) ***
+I, [2012-12-05T15:55:21.829608 #16918]  INFO -- : *** parse_symbols_between_delimiters(resources processes) ***
+D, [2012-12-05T15:55:21.830178 #16918] DEBUG -- : /(resources) (.*) (processes)/
+I, [2012-12-05T15:56:58.841331 #16976]  INFO -- : *** parse_symbols_between_delimiters(resources processes) ***
+D, [2012-12-05T15:56:58.841900 #16976] DEBUG -- : /(resources) (.*) (processes)/
+D, [2012-12-05T15:56:58.842144 #16976] DEBUG -- : nil
+I, [2012-12-05T15:58:23.701000 #17037]  INFO -- : *** parse_symbols_between_delimiters(resources processes) ***
+D, [2012-12-05T15:58:23.701615 #17037] DEBUG -- : /(resources) (.*) (processes)/
+D, [2012-12-05T15:58:23.701852 #17037] DEBUG -- : #<MatchData "resources      resource_1 ,resource_2,      processes" 1:"resources" 2:"     resource_1 ,resource_2,     " 3:"processes">
