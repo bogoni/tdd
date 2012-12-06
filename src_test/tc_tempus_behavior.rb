@@ -1,4 +1,4 @@
-require "../src/tempus.rb"
+require "src/tempus.rb"
 require "test/unit"
  
 class Test_tempus < Test::Unit::TestCase
@@ -22,5 +22,11 @@ class Test_tempus < Test::Unit::TestCase
     p "*** test_parse_input_structure Done! *** "    
   end
 
+  def test_solve_tree
+    p "*** test_solve_tree *** "
+    @tempus.solve
+    #assert(@tempus.parse(@input_test_structure), "parse error")
+    p "*** test_solve_tree Done! *** "    
+  end
 
 end

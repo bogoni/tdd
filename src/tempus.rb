@@ -3,10 +3,9 @@ require 'logger'
 $log = Logger.new(STDOUT)
 
 require_relative "./rule.rb"
+require_relative "./tree_node.rb"
 
-
-class Tempus
- 
+class Tempus 
 
   def parse(data)
     clean_data = clean_data(data)
@@ -17,6 +16,20 @@ class Tempus
   end
 
   def solve
+    
+    
+    root = Tree_node.new("root")   
+    root.add_node( a = Tree_node.new("a"))
+    a.add_node( b = Tree_node.new("b"))
+    a.add_node( c = Tree_node.new("c"))
+    c.add_node( d = Tree_node.new("d"))
+    root.add_node(e = Tree_node.new("e"))
+    e.add_node(f = Tree_node.new("f"))
+    e.add_node(g = Tree_node.new("g"))
+    
+    root.each_depth_first do |child|
+      puts child.name
+    end
   end
   
   private
