@@ -24,11 +24,11 @@ class Test_tempus < Test::Unit::TestCase
     p "*** test_parse_input_structure Done! *** "    
   end
 
-  def test_solve_tree
-    p "*** test_solve_tree *** "
+  def test_solve
+    p "*** test_solve *** "
     #@tempus.solve
     assert(false, "solve error")
-    p "*** test_solve_tree Done! *** "    
+    p "*** test_solve Done! *** "    
   end
 
 end
