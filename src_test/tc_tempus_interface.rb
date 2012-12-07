@@ -1,5 +1,6 @@
-require "../src/tempus.rb"
 require "test/unit"
+require_relative "../src/tempus.rb"
+
  
 class TestTempus < Test::Unit::TestCase
  
