@@ -18,7 +18,7 @@ class Tempus
   def solve(processes,resources)
     result = []
     resources.permutation(processes.length) { |e| 
-      result << e if true #substitute "true" for rules
+      result << e if true #TODO: substitute "true" for rules
     }
     result
   end
