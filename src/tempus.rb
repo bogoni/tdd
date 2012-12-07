@@ -2,8 +2,8 @@ require 'logger'
 
 $log = Logger.new(STDOUT)
 
-require_relative "./rule.rb"
-require_relative "./tree_node.rb"
+require_relative "./solver/rule.rb"
+require_relative "./solver/tree_node.rb"
 
 class Tempus 
 
