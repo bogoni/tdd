@@ -26,8 +26,8 @@ class Test_tempus < Test::Unit::TestCase
 
   def test_solve_tree
     p "*** test_solve_tree *** "
-    @tempus.solve
-    #assert(@tempus.parse(@input_test_structure), "parse error")
+    #@tempus.solve
+    assert(false, "solve error")
     p "*** test_solve_tree Done! *** "    
   end
 
