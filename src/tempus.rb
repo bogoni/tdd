@@ -10,7 +10,7 @@ class Tempus
   def parse(data)
     clean_data = clean_data(data)
     @resources = parseResources(clean_data)
-    @processes = parseProcesses(clean_data) 
+    @processes = parseProcesses(clean_data)
     @rules = parseRules(clean_data)
     @resources.all?{|e| e.is_a?(Symbol)} && @processes.all?{|e| e.is_a?(Symbol)} && @rules.all?{|e| e.is_a?(Rule)}
   end
