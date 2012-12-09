@@ -27,7 +27,7 @@ class Test_tempus < Test::Unit::TestCase
   def test_solve
     p "*** test_solve *** "
     #@tempus.solve
-    assert(false, "solve error")
+    assert(false, "solve yet to be implemented")
     p "*** test_solve Done! *** "    
   end
 
