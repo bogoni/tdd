@@ -19,7 +19,6 @@ function drawResources() {
 		ulResource.appendChild(li);
 	}
 	$("#resources li").draggable({
-		appendTo: "body",
 		helper: "clone"
 	});	
 }
