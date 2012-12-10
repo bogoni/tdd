@@ -1,7 +1,7 @@
 class Rule
 
-  def initialize(data)
-    @data = data
+  def initialize(scenario, goal, credit)
+    @scenario, @goal, @credit = scenario, goal, credit
   end
   
 end
