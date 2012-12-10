@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Tempus UI</title>
+    <link type="text/css" rel="stylesheet" href="style/jquery-ui-1.9.2.custom.css" />
+    <link type="text/css" rel="stylesheet" href="style/tempusUI.css" />
+    <script type="text/javascript" src="scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.9.2.custom.js"></script>
+    <script type="text/javascript" src="scripts/tempusUI.js"></script>
+  </head>
+
+  <body>
+    <form>
+      <p>
+        <input type="button" value="Print JSON" onclick="printJSON()">
+        <input type="button" value="Draw Resources" onclick="drawResources()">
+        <input type="button" value="Draw Processes" onclick="drawProcesses()">
+      </p>
+    </form>    
+
+    <div id="JSONOutput"></div>
+    
+    <div id="divResources">
+        <ul id="resources"></ul>
+    </div>
+    
+    <div id="divProcesses">
+    </div>
+
+  </body>
+
+</html>
