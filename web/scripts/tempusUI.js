@@ -9,6 +9,11 @@ function parseJSON() {
 	return JSON.parse(myJSON, null);
 }
 
+function drawBasicUI() {
+	drawResources();
+	drawProcesses();
+}
+
 function drawResources() {
 	var myObject = parseJSON();
 	for (var i = 0; i < myObject.resources.resourceObjectArray.length; i++) {
@@ -51,14 +56,13 @@ function createResultArray() {
 	$("#divResult").contents().remove();
 	
 	$("#divProcesses > ul").each( function () {
-		var processName = $(this).find(".processName").text();
 		var resourcesArray = new Array();
 		$(this).find(".resourceName").each(function () {
 			resourcesArray.push({resourceName: $(this).text()});
 		});
-		resultArray.push({processName: processName, resourcesArray: resourcesArray});
+		resultArray.push({processName: $(this).find(".processName").text(), resourcesArray: resourcesArray});
 	});
-	return resultArray;
+	return new Object({resultArray: resultArray});
 }
 
 function encodeResultArray(resultArray) {
