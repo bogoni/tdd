@@ -1,7 +1,5 @@
 require "test/unit"
-
 require_relative "../src/tempus.rb"
-
  
 class Test_tempus < Test::Unit::TestCase
   
@@ -30,5 +28,5 @@ class Test_tempus < Test::Unit::TestCase
     assert(false, "solve yet to be implemented")
     p "*** test_solve Done! *** "    
   end
-
+  
 end
