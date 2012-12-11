@@ -2,10 +2,10 @@ module Parser
   
   def parse(data)
     clean_data = clean_data(data)
-    @resources = parseResources(clean_data)
-    @processes = parseProcesses(clean_data)
+    @resources = parse_resources(clean_data)
+    @time_slots = parse_time_slots(clean_data)
     @rules = parseRules(clean_data)
-    @resources.all?{|e| e.is_a?(Symbol)} && @processes.all?{|e| e.is_a?(Symbol)} && @rules.all?{|e| e.is_a?(Rule)}
+    @resources.all?{|e| e.is_a?(Symbol)} && @time_slots.all?{|e| e.is_a?(Symbol)} && @rules.all?{|e| e.is_a?(Rule)}
   end
 
   
@@ -26,12 +26,12 @@ module Parser
     string_array.map {|resource_string| resource_string.to_sym }
   end
   
-  def parseResources(data)
-    parse_symbols_between_delimiters("resources", "processes",data)
+  def parse_resources(data)
+    parse_symbols_between_delimiters("resources", "time_slots",data)
   end
   
-  def parseProcesses(data)
-    parse_symbols_between_delimiters("processes", "rules",data)
+  def parse_time_slots(data)
+    parse_symbols_between_delimiters("time_slots", "rules",data)
   end
   
   def parseRules(data)

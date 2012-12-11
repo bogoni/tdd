@@ -1,7 +1,7 @@
 module Solver
-  def solve(processes,resources)
+  def solve(time_slots,resources)
     result = []
-    resources.permutation(processes.length) { |e| 
+    resources.permutation(time_slots.length) { |e| 
       result << e if true #TODO: substitute "true" for rules
     }
     result

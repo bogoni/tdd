@@ -24,12 +24,12 @@ class Sinatra_Server_Tester < Test::Unit::TestCase
     p "*** test_it_says_hello_to_a_person done***"    
   end
   
-  def test_get_processes_as_json
-    p "*** test_get_processes_as_json ***"
+  def test_get_time_slots_as_json
+    p "*** test_get_time_slots_as_json ***"
     browser = Rack::Test::Session.new(Rack::MockSession.new(Sinatra::Application))
-    browser.get '/getProcAsJson'
-    assert browser.last_response.body.include?('Process')
-    p "*** test_get_processes_as_json done!***"
+    browser.get '/getTimeSlotAsJson'
+    assert browser.last_response.body.include?('TimeSlot')
+    p "*** test_get_time_slots_as_json done!***"
   end
   
   def test_open_public_folder

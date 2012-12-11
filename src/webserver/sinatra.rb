@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'json'
-require_relative '../solver/process.rb'
+require_relative '../solver/time_slot.rb'
 
 enable :static
 
@@ -12,11 +12,8 @@ get '/' do
   end  
 end
 
-get '/getProcAsJson' do
-  processes = []
-  process = Process_.new
-  processes << process
-  processes.to_json 
+get '/getTimeSlotAsJson' do
+  [TimeSlot.new].to_json
 end
 
 get '/helloWorld' do
