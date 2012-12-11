@@ -41,24 +41,29 @@ function drawProcesses() {
 	$("#divProcesses ul").droppable({
 		drop: function(event, ui) {
 			$(this).append(ui.draggable);
-			//$("<li></li>").text(ui.draggable.text()).appendTo(this);
 		}
 	}).sortable({helper: "original"});
 }
 
-function printResultArray() {
+function createResultArray() {
 	var resultArray = new Array();
 	
 	$("#divResult").find("#result > li").remove();
 	
-	$("#divProcesses > ul").each( function (index, Element) {
-		var tempArray = new Array();
+	$("#divProcesses > ul").each( function () {
 		var processName = $(this).find(".processName").text();
+		var resourcesArray = new Array();
 		$(this).find(".resourceName").each(function () {
-			tempArray.push($(this).text());
+			resourcesArray.push({resourceName: $(this).text()});
 		});
-		resultArray.push({processName: processName, resourcesArray: tempArray});
+		resultArray.push({processName: processName, resourcesArray: resourcesArray});
 	});
+	return resultArray;
+}
+
+function printResultArray() {
+	var resultArray = createResultArray();
+	
 	for (var i = 0; i < resultArray.length; i++) {
 		var liProcess = window.document.createElement("li");
 		liProcess.appendChild(window.document.createTextNode(resultArray[i].processName));
@@ -67,7 +72,7 @@ function printResultArray() {
 		var ulResources = window.document.createElement("ul");
 		for (var j = 0; j < resultArray[i].resourcesArray.length; j++) {
 			var liResource = window.document.createElement("li");
-			liResource.appendChild(window.document.createTextNode(resultArray[i].resourcesArray[j]));
+			liResource.appendChild(window.document.createTextNode(resultArray[i].resourcesArray[j].resourceName));
 			ulResources.appendChild(liResource);
 		}
 		if (ulResources.childNodes.length > 0 ) {
