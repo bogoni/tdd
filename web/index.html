@@ -14,17 +14,36 @@
   <body>
     <form>
       <p>
-        <input type="button" value="Print JSON" onclick="printJSON()">
+        <input type="button" value="Print Input JSON" onclick="printInputJSON()">
         <input type="button" value="Draw Resources" onclick="drawResources()">
         <input type="button" value="Draw Processes" onclick="drawProcesses()">
+        <input type="button" value="Print Output JSON" onclick="printResultJSON()">
       </p>
     </form>    
+    
+    <h3>Input JSON</h3>
+    
+    <div id="inputJSON">
+    </div>
 
-    <div id="JSONOutput"></div>
+    <hr>
+
+    <h3>Output JSON</h3>
+    
+    <div id="outputJSON">
+    </div>
+    
+    <hr>
+    
+    <h3>Resources</h3>
     
     <div id="divResources">
         <ul id="resources"></ul>
     </div>
+    
+    <hr>
+    
+    <h3>Processes</h3>
     
     <div id="divProcesses">
     </div>

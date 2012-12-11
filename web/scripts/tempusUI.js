@@ -1,12 +1,12 @@
 var myJSON = '{"resources":{"resourceObjectArray":[{"resourceName":"firstResource"},{"resourceName":"secondResource"},{"resourceName":"thirdResource"}]},"processes":{"processObjectArray":[{"processName":"firstProcess"},{"processName":"secondProcess"},{"processName":"thirdProcess"}]}}';
 
-function printJSON() {
-	$("#JSONOutput").append(myJSON);
+function printInputJSON() {
+	$("#inputJSON").contents().remove();
+	$("#inputJSON").append(myJSON);
 }
 
 function parseJSON() {
-	var myObject = JSON.parse(myJSON, null);
-	return myObject;
+	return JSON.parse(myJSON, null);
 }
 
 function drawResources() {
@@ -48,7 +48,7 @@ function drawProcesses() {
 function createResultArray() {
 	var resultArray = new Array();
 	
-	$("#divResult").find("#result > li").remove();
+	$("#divResult").contents().remove();
 	
 	$("#divProcesses > ul").each( function () {
 		var processName = $(this).find(".processName").text();
@@ -61,25 +61,11 @@ function createResultArray() {
 	return resultArray;
 }
 
-function printResultArray() {
-	var resultArray = createResultArray();
-	
-	for (var i = 0; i < resultArray.length; i++) {
-		var liProcess = window.document.createElement("li");
-		liProcess.appendChild(window.document.createTextNode(resultArray[i].processName));
-		$("#result").append(liProcess);
-		var liResources = window.document.createElement("li");
-		var ulResources = window.document.createElement("ul");
-		for (var j = 0; j < resultArray[i].resourcesArray.length; j++) {
-			var liResource = window.document.createElement("li");
-			liResource.appendChild(window.document.createTextNode(resultArray[i].resourcesArray[j].resourceName));
-			ulResources.appendChild(liResource);
-		}
-		if (ulResources.childNodes.length > 0 ) {
-			liResources.appendChild(ulResources);
-		}
-		if (liResources.childNodes.length > 0) {
-			$("#result").append(liResources);
-		}
-	}
+function encodeResultArray(resultArray) {
+	return JSON.stringify(resultArray);
+}
+
+function printResultJSON() {
+	$("#outputJSON").contents().remove();
+	$("#outputJSON").append(encodeResultArray(createResultArray()));
 }
