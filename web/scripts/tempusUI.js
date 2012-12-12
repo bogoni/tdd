@@ -69,6 +69,8 @@ function drawProcesses() {
 			$(this).append(ui.draggable);
 		}
 	}).sortable({helper: "original"});
+//	$("#divProcesses").sortable().not(".processName");
+
 }
 
 /* RESULTS CREATION */
