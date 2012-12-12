@@ -1,1 +1,52 @@
-index.htm
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Tempus UI</title>
+    <link type="text/css" rel="stylesheet" href="style/jquery-ui-1.9.2.custom.css" />
+    <link type="text/css" rel="stylesheet" href="style/tempusUI.css" />
+    <script type="text/javascript" src="scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.9.2.custom.js"></script>
+    <script type="text/javascript" src="scripts/tempusUI.js"></script>
+  </head>
+
+  <body>
+    <form>
+      <p>
+        <input type="button" value="Print Input JSON" onclick="printInputJSON()">
+        <input type="button" value="Draw Basic UI" onclick="drawBasicUI()">
+        <input type="button" value="Print Output JSON" onclick="printResultJSON()">
+      </p>
+    </form>    
+    
+    <h3>Input JSON</h3>
+    
+    <div id="inputJSON">
+    </div>
+
+    <hr>
+
+    <h3>Output JSON</h3>
+    
+    <div id="outputJSON">
+    </div>
+    
+    <hr>
+    
+    <h3>Resources</h3>
+    
+    <div id="divResources">
+        <ul id="resources"></ul>
+    </div>
+    
+    <hr>
+    
+    <h3>Processes</h3>
+    
+    <div id="divProcesses">
+    </div>
+
+  </body>
+
+</html>

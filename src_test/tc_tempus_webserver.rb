@@ -1,11 +1,11 @@
-require_relative "../src/server/sinatra.rb"
+require_relative "../src/webserver/tempus_webserver.rb"
 require "test/unit"
 require "rack/test"
 
 set :environment, :test
 ENV['RACK_ENV'] = 'test'
 
-class Sinatra_Server_Tester < Test::Unit::TestCase
+class Tempus_Webserver_Tester < Test::Unit::TestCase
 
   def test_it_says_hello_world
     p "*** test_it_says_hello_world ***"
@@ -24,19 +24,19 @@ class Sinatra_Server_Tester < Test::Unit::TestCase
     p "*** test_it_says_hello_to_a_person done***"    
   end
   
-  def test_get_processes_as_json
-    p "*** test_get_processes_as_json ***"
+  def test_get_time_slots_as_json
+    p "*** test_get_time_slots_as_json ***"
     browser = Rack::Test::Session.new(Rack::MockSession.new(Sinatra::Application))
-    browser.get '/getProcAsJson'
-    assert browser.last_response.body.include?('Process')
-    p "*** test_get_processes_as_json done!***"
+    browser.get '/getTimeSlotAsJson'
+    assert browser.last_response.body.include?('TimeSlot')
+    p "*** test_get_time_slots_as_json done!***"
   end
   
   def test_open_public_folder
     p "*** test_open_public_folder ***"
     browser = Rack::Test::Session.new(Rack::MockSession.new(Sinatra::Application))
     browser.get '/'
-    assert_equal 'index.htm', browser.last_response.body
+    assert browser.last_response.body.include?('index.htm')
     p "*** test_it_says_hello_world done!***"    
   end
 
