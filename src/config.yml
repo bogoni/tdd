@@ -1,0 +1,3 @@
+- solver: 
+    default_number_of_soft_rules_iterations: 100
+  environment: "test"
