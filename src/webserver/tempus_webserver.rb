@@ -6,7 +6,7 @@ enable :static
 
 get '/' do
   if  ENV['RACK_ENV'] == 'test' then
-    File.new('src/server/public/index.htm').readlines
+    File.new('src/webserver/public/index.htm').readlines
   else
     redirect '/index.htm'
   end  
