@@ -4,7 +4,7 @@ class HardRule
     @scenario, @goal = scenario, goal
   end
   
-  def applies?(solution)
+  def satisfied?(solution)
     return false unless valid_scenario?(solution)
     return goal_achieved?(solution)
   end
