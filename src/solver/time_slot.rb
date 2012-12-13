@@ -1,3 +1,3 @@
 class TimeSlot
-@@valid_attributes = [:type]
+@@valid_attributes = [:name, :start_date, :end_date, :type, :resources]
 end

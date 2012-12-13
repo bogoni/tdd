@@ -1,3 +1,3 @@
 class Resource
-  @@valid_attributes = [:type, :quantity]
+  @@valid_attributes = [:name, :type, :quantity]
 end
