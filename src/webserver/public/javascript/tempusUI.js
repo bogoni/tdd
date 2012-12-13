@@ -1,4 +1,5 @@
-var myJSON = '{"resources":{"resourceObjectArray":[{"resourceName":"firstResource"},{"resourceName":"secondResource"},{"resourceName":"thirdResource"}]},"processes":{"processObjectArray":[{"processName":"firstProcess"},{"processName":"secondProcess"},{"processName":"thirdProcess"}]}}';
+//var myJSON = '{"resources":{"resourceObjectArray":[{"resourceName":"firstResource"},{"resourceName":"secondResource"},{"resourceName":"thirdResource"}]},"processes":{"processObjectArray":[{"processName":"firstProcess"},{"processName":"secondProcess"},{"processName":"thirdProcess"}]}}';
+var myJSON = null;
 
 /* JSON MANIPULATION */
 
@@ -18,6 +19,45 @@ function parseJSON() {
 
 function encodeResultArray(resultArray) {
 	return JSON.stringify(resultArray);
+}
+
+function createRequest() {
+	var request = null;
+	try {
+		request = new XMLHttpRequest();
+	} catch (tryMS) {
+		try {
+			request = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (otherMS) {
+			try {
+				request = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (failed) {
+				request = null;
+			}
+		}
+	}
+	return request;
+}
+
+function getJSON() {
+	var request = createRequest();
+	
+	if (request != null) {
+		request.open("GET", "getTimeSlotAsJson", false);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				if (request.status == 200) {
+					myJSON = request.responseText;			
+				}
+			}
+		};
+		request.send(null);
+	}
+	printInputJSON();
+}
+
+function postJSON() {
+	$("#tempusJSON").attr("value", encodeResultArray(createResultArray()));
 }
 
 /* BASIC UI DRAWING */ 

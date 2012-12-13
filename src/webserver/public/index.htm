@@ -12,11 +12,13 @@
   </head>
 
   <body>
-    <form>
+    <form method="post" action="/postjson">
       <p>
-        <input type="button" value="Print Input JSON" onclick="printInputJSON()">
+        <input type="hidden" id="tempusJSON" name="textfieldForTesting" value="" />
+        <input type="button" value="Get JSON" onclick="getJSON()">
         <input type="button" value="Draw Basic UI" onclick="drawBasicUI()">
         <input type="button" value="Print Output JSON" onclick="printResultJSON()">
+        <input type=submit name="Post JSON" onclick="postJSON()" />
       </p>
     </form>    
     
