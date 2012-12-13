@@ -88,4 +88,5 @@ function createResultArray() {
 		resultArray.push({processName: $(this).find(".processName").text(), resourcesArray: resourcesArray});
 	});
 	return new Object({resultArray: resultArray});
+	
 }
