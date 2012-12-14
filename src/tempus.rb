@@ -9,8 +9,6 @@ rescue ArgumentError => e
   puts "Could not parse YAML: #{e.message}"
 end
 
-p $config
-
 $log = Logger.new(STDOUT)
 
 require_relative "./solver/solver.rb"
