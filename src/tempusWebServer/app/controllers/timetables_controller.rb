@@ -1,6 +1,9 @@
 class TimetablesController < ApplicationController
+
+  before_filter :authenticate_user!
+  
   # GET /timetables
-  # GET /timetables.json
+  # GET /timetables.json  
   def index
     @timetables = Timetable.all
 
