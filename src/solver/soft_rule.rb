@@ -7,7 +7,7 @@ class SoftRule < HardRule
     @credit = credit
   end
 
-  def how_much_credit?(solution)
+  def credit(solution)
     return 0 unless valid_scenario?(solution)
     how_much_goal_achieved?(solution) * @credit 
   end
