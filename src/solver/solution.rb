@@ -11,7 +11,7 @@ class Solution
     data_storage[time_slot]
   end
   
-  protected
+  private
   def this.initialize_data(time_slots)
     data_storage = {}
     time_slots.each { |time_slot|
